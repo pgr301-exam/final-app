@@ -4,6 +4,7 @@ import com.codahale.metrics.MetricFilter;
 import com.codahale.metrics.MetricRegistry;
 import com.codahale.metrics.graphite.Graphite;
 import com.codahale.metrics.graphite.GraphiteReporter;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -12,6 +13,12 @@ import java.util.concurrent.TimeUnit;
 
 @Configuration
 public class GraphiteMetricsConfig {
+
+    @Value("${graphite.host}")
+    public String graphiteHost;
+
+    @Value("${graphite.apiKey}")
+    private String graphiteApiKey;
 
     @Bean
     public MetricRegistry registry() {
