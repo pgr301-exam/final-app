@@ -13,3 +13,6 @@ logging:
   level:
     org.hibernate: ERROR
     org.springframework.web: INFO
+
+server:
+  port: ${PORT}
