@@ -5,9 +5,9 @@ spring:
     hibernate:
       ddl-auto: create-drop
 
-#graphite:
-#  host: ${GRAPHITE_HOST}
-#  apiKey: ${HOSTEDGRAPHITE_APIKEY}
+graphite:
+  host: ${GRAPHITE_HOST}
+  apiKey: ${HOSTEDGRAPHITE_APIKEY}
 
 logging:
   level:
