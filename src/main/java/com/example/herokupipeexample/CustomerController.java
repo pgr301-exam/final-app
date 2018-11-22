@@ -37,7 +37,6 @@ public class CustomerController extends GraphiteMetricsConfig
     @RequestMapping("/list")
     public List<Customer> find(@RequestParam(value="lastName") String lastName)
     {
-        System.out.println("print this =========> " + graphiteHost);
         Timer.Context context = timer.time();
         logger.info("Finding customers with last name => " + lastName);
         List<Customer> list = customerRepository.findByLastName(lastName);
