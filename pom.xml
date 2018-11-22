@@ -64,6 +64,12 @@
 			<version>${metrics.version}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>io.logz.logback</groupId>
+			<artifactId>logzio-logback-appender</artifactId>
+			<version>1.0.20</version>
+		</dependency>
+
 		<!-- ************************tests************************ -->
 		<dependency>
 			<groupId>junit</groupId>

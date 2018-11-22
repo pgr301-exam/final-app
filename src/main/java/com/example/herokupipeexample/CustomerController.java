@@ -1,19 +1,16 @@
 package com.example.herokupipeexample;
 
-import java.util.List;
-import java.util.SortedMap;
-import java.util.concurrent.atomic.AtomicLong;
-
 import com.codahale.metrics.Counter;
 import com.codahale.metrics.MetricRegistry;
 import com.codahale.metrics.Timer;
 import com.codahale.metrics.graphite.GraphiteReporter;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
+import java.util.List;
 
 @RestController
 public class CustomerController extends GraphiteMetricsConfig
@@ -21,7 +18,8 @@ public class CustomerController extends GraphiteMetricsConfig
     private CustomerRepository customerRepository;
     private MetricRegistry registry = registry();
 
-    private final Logger logger = LogManager.getLogger(this.getClass());
+//    private final Logger logger = LogManager.getLogger(this.getClass()); can not use both loggers
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
     private final Counter numberOfCustomers = registry.counter("Customer counter");
     private final Timer timer = registry.timer("Get list timer");
 
