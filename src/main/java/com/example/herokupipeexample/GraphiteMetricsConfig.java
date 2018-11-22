@@ -14,11 +14,11 @@ import java.util.concurrent.TimeUnit;
 @Configuration
 public class GraphiteMetricsConfig {
 
-    @Value("${graphite.host}")
+    /*@Value("${graphite.host}")
     public String graphiteHost;
 
     @Value("${graphite.apiKey}")
-    private String graphiteApiKey;
+    private String graphiteApiKey;*/
 
     @Bean
     public MetricRegistry registry() {
