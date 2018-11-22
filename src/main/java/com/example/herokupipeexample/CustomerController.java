@@ -52,6 +52,7 @@ public class CustomerController extends GraphiteMetricsConfig
         return customerRepository.save(customer);
     }
 
+//    This is not at good practice, only testing purpose
     @DeleteMapping("/")
     public void deleteAll()
     {
