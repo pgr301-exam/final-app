@@ -14,5 +14,5 @@ logging:
     org.hibernate: ERROR
     org.springframework.web: INFO
 
-server:
-  port: ${PORT}
+#server:
+#  port: ${PORT}

@@ -1,6 +1,7 @@
 package com.example.herokupipeexample;
 
 import java.util.List;
+import java.util.SortedMap;
 import java.util.concurrent.atomic.AtomicLong;
 
 import com.codahale.metrics.Counter;
@@ -11,6 +12,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import javax.annotation.PostConstruct;
 
 @RestController
 public class CustomerController extends GraphiteMetricsConfig
@@ -25,6 +28,13 @@ public class CustomerController extends GraphiteMetricsConfig
     public CustomerController(CustomerRepository customerRepository)
     {
         this.customerRepository = customerRepository;
+    }
+
+    @PostConstruct
+    public void initialize()
+    {
+        GraphiteReporter reporter = getReporter(registry);
+        reporter.report();
     }
 
     @RequestMapping("/")
