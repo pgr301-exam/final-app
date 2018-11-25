@@ -9,10 +9,10 @@ graphite:
   host: ${GRAPHITE_HOST}
   apiKey: ${HOSTEDGRAPHITE_APIKEY}
 
-#logging:
-#  level:
-#    org.hibernate: ERROR
-#    org.springframework.web: INFO
+logging:
+  level:
+    org.hibernate: ERROR
+    org.springframework.web: INFO
 
 #server:
 #  port: ${PORT}
